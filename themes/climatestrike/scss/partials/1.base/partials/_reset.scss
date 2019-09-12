@@ -1,0 +1,24 @@
+/*
+    Base:Reset
+    ==========
+*/
+
+/*
+    1. Use border-box globally
+*/
+*,
+*:after,
+*:before {
+    box-sizing: border-box; /* 1 */
+}
+
+/*
+    1. reset some stuff
+*/
+p,blockquote,pre,
+dl,dd,form,fieldset,legend,
+table,th,td,caption,
+hr {
+    margin: 0; /* 1 */
+    padding: 0; /* 1 */
+}

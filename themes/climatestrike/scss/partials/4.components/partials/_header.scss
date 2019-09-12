@@ -1,0 +1,88 @@
+.page-header {
+    width: 100%;
+    height: 5em;
+
+    z-index: 2;
+
+    background-color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5em;
+
+    @include respond(max-width, 800px) {
+        position: fixed;
+    }
+
+}
+
+.header-content {
+    display: flex;
+}
+.header-navigation {
+    @include respond(max-width, 800px) {
+        display: none;
+    }
+
+    background-color: #fff;
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        li {
+            a {
+                display: block;
+                line-height: 5rem;
+                padding: 0 1.5rem;
+            
+                color: #000;
+                text-decoration: none;
+                font-family: 'FucXed', sans-serif;
+                font-size: 2em;
+                text-align: center;
+                text-transform: uppercase;
+            }
+            a:hover {
+                background-color: #f0f0f0;
+            }
+        }
+    }
+}
+
+.front-page-header {
+    width: 100%;
+    height: 100vh;
+
+    background-color: #fff;
+    mix-blend-mode: screen;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .site-name {
+        font-size: 5em;
+        line-height: 1em;
+
+        @include respond(max-width, 599px) {
+            font-size: 4em;
+        }
+    }
+
+    > * {
+        margin-top: 1em;
+    }
+}
+
+.mobile-menu-bar {
+    width: 100%;
+    height: 5em;
+    background-color: #fff;
+
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}

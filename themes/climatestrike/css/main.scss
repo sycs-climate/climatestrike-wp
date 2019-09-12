@@ -1,0 +1,365 @@
+/*
+Theme Name: climatestrike.scot
+Theme URI: http://climatestrike.scot
+Author: Emil Carr
+Author URI: http://emilcarr.scot
+Description: A custom theme designed specifically for use on climatestrike.scot.
+Version: 1.0
+License: GPL v3.0 or Later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: environment
+
+This theme is licensed under GPL v3.0
+*/
+
+// Some breakpoints
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+@mixin portrait {
+    @media (orientation: portrait) { @content; }
+}
+
+@font-face {
+    font-family: 'FucXed';
+    src: url("../fonts/fucxedcaps-v3-webfont.woff2") format("woff2");
+    font-style:normal;
+    font-weight:normal;
+}
+
+
+*,
+*:after,
+*:before{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.burger {
+    background: none;
+    border: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    padding: 0.5em;
+
+    transition: 0.4s;
+}
+.burger:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -20em;
+    z-index: 1;
+
+    width: 20em;
+
+    background-color: #fff;
+    transition: 0.4s;
+
+    .burger {
+        position: relative;
+    }
+}
+.sidebar-navigation {
+    ul {
+        list-style: none;
+    }
+    li {
+        width: 100%;
+        a {
+            display: block;
+            width: 100%;
+
+            line-height: 1;
+            padding: .8125rem 1rem .75rem;
+
+            text-transform: uppercase;
+            font-weight: bolder;
+            text-align: center;
+            font-family: "FucXed", sans-serif;
+            font-size: 2em;
+            
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    li:hover {
+        background-color: #f1f1f1;
+    }
+}
+
+.page-header {
+    width: 100%;
+    height: 5em;
+
+    background-color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5em;
+}
+
+.header-content {
+    display: flex;
+}
+.header-navigation {
+    height: 100%;
+    ul {
+        display: flex;
+        list-style: none;
+        height: 100%;
+        li {
+            height: 100%;
+            a {
+                display: block;
+                height: 100%;
+            
+                color: #000;
+                text-decoration: none;
+                font-family: 'FucXed', sans-serif;
+                font-size: 2em;
+                text-align: center;
+                text-transform: uppercase;
+            }
+            a:hover {
+                background-color: #f0f0f0;
+            }
+        }
+    }
+}
+
+.front-page-header {
+    width: 100%;
+    height: 100vh;
+
+    background-color: #fff;
+    mix-blend-mode: screen;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .site-name {
+        font-size: 5em;
+        line-height: 1em;
+
+        @include for-phone-only {
+            font-size: 4em;
+        }
+    }
+
+    > * {
+        margin-top: 1em;
+    }
+}
+
+.socials {
+    width: 16em;
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    img {
+        height: 4em;
+
+    }
+    a {
+        display: block;
+    }
+}
+
+.site-name {
+    font-size: 2em;
+    line-height: 1em;
+}
+.site-name-large {
+}
+
+.spacer {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spacer * {
+    margin-top: auto;
+}
+
+.content {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #fff;
+
+    box-sizing: border-box;
+    padding: 4em;
+
+    @include for-phone-only {
+        padding: 1em 2em;
+    }
+}
+
+.page-footer {
+    background-color: #000;
+    width: 100%;
+    min-height: 25px;
+    
+    box-sizing: border-box;
+    padding: .625rem;
+
+    color: #fff;
+}
+.flexul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#facebook-event-frame {
+    width: 100%;
+}
+
+#sign-up-wrapper {
+    padding: .625em;
+    @include portrait {
+        padding: 0;
+    }
+}
+.form-group {
+    padding: .625em;
+    @include portrait {
+        padding: .625em 0;
+    }
+}
+.form-wrap {
+    padding: .625em;
+}
+
+.form-wrap {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.form-wrap > * {
+    width: 33.333%;
+    @include portrait {
+        width: 100%;
+    }
+}
+.form-group {
+    input {
+        width: 100%;
+        border: none;
+
+        line-height: 1;
+        padding: .8125rem 1rem .75rem;
+    }
+    input[type="text"] {
+        background-color: #fff;
+        border: 1px solid #f1f1f1;
+    }
+    input[type="submit"] {
+        background-color: #000;
+        color: #fff;
+    }
+    label {
+        display: none;
+    } 
+}
+
+.form-checkbox {
+    display: flex;
+    width: 100%;
+
+    label {
+        display: block;
+        order: 1;
+    }
+    input[type="checkbox"] {
+        order: 0;
+        width: 1em;
+        margin: 0 1em;
+    }
+}
+
+.jumbo {
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    font-family: "FucXed", sans-serif;
+}
+@media (min-resolution: 1.25dppx) {
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+}
+@media (min-resolution: 1.5dppx) {
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+
+}
+@media (min-resolution: 2dppx) {
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+
+}
+
+.wp-block-separator {
+    color: #f1f1f1;
+    margin: 4em 0;
+}
+.wp-block-columns {
+    @include portrait {
+        flex-wrap: wrap;
+    }
+}

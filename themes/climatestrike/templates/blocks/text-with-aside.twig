@@ -1,0 +1,12 @@
+<div class="text-with-aside type">
+    <div class="type body-text">
+        {{ content }}
+    </div>
+
+    <div class="text-with-aside__quote">
+        {% if jumbo %}
+            <div class="jumbo-title">{{ jumbo }}</div>
+        {% endif %}
+        {{ aside }}
+    </div>
+</div>

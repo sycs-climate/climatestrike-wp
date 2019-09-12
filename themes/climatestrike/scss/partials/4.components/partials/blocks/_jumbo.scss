@@ -1,0 +1,13 @@
+.jumbo {
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    font-family: "FucXed", sans-serif;
+
+    font-size: 2.5em;
+    @include respond(max-width, 800px) {
+        font-size: 2em;
+    }
+
+    margin-bottom: 1em;
+}

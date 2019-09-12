@@ -1,0 +1,63 @@
+{% set hasfeaturedTextBlock = function('has_block', 'xr/featured-text', post.id) %}
+{% set showTitle = true %}
+
+{% set overlayClass = post.slug %}
+
+{% if post.post_type == 'xr_event' or post.post_type == 'post' %}
+    {% set showTitle = false %}
+{% endif %}
+
+{% if function('is_front_page') %}
+    {% set showTitle = false %}
+{% endif %}
+
+{% if videoHero %}
+    <div id="hero-video" class="hero-video flex-embed">
+        <div class="flex-embed__ratio--2by1"></div>
+        <div id="js-yt-container" class="flex-embed__content" data-video-id="{{ videoHero }}"></div>
+        <div class="hero-video-overlay {{ overlayClass }}-video-overlay flex-embed__content container">
+            {% if function('is_front_page') %}
+                <div class="home-video-overlay__title">
+                    <h1>This is an emergency</h1>
+                </div>
+            {% endif %}
+            <button class="hero-video-play-icon" aria-label="Play video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><circle class="circle" cx="249.5" cy="251" r="230" fill="#13A937"/><path class="triangle" fill="#FFF" d="M172.34 383.84l233.4-131.87-233.4-131.87z"/></svg></button>
+            {% if function('is_front_page') %}
+                <div class="home-video-overlay__ir-info">
+                    <h2>International Rebellion - From 15th April - <a href="/international-rebellion">Find out more</a></h2>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+
+{% if (hero) and not videoHero %}
+    {% set image = TimberImage(hero.id) %}
+
+    <div class="hero {{ class }}">
+        {% if image.src('xr_hero_small') and image.src('xr_hero_medium') and image.src('xr_hero_large') %}
+        <picture>
+            <source srcset="{{ image.src('xr_hero_large') }}" media="(min-width: 1001px)">
+            <source srcset="{{ image.src('xr_hero_medium') }}" media="(min-width: 601px)">
+            <img src="{{ image.src('xr_hero_small') }}" alt="{{ image.alt }}" />
+        </picture>
+        {% else %}
+            <img src="{{ image.src }}" alt="{{ image.alt }}" />
+        {% endif %}
+        {% if showTitle %}
+            <h1>{{ post.title }}</h1>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% if not hero and post.post_type == 'xr_event' %}
+    <div class="event-hero">
+        <img src="{{ post.event_image }}" alt="" />
+    </div>
+{% endif %}
+
+{% if showTitle and not hero and not hasfeaturedTextBlock %}
+    <div class="type body-text container container--bottom0">
+        <h1>{{ post.title }}</h1>
+    </div>
+{% endif %}

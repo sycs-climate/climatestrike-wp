@@ -1,0 +1,24 @@
+{% extends 'page.twig' %}
+
+{% block header_container %}
+    
+
+    <header class="front-page-header">
+        <div class="site-branding">
+            {% include 'partials/site-branding.twig' %}
+        </div>
+        <div class="socials">
+            {% include 'partials/icon-menu-list.twig' with {'menu': menu_socials} %}
+        </div>
+        <p class="jumbo">Scroll Down</p>
+    </header>
+
+    <nav class="header-navigation" role="navigation">
+        {% include 'partials/menu-list.twig' with {'menu': menu_primary_navigation} %}
+    </nav>
+
+    <div class="mobile-menu-bar">
+        {% include 'partials/burger.twig' with {onclick: "toggleSidebar();"} %}
+    </div>
+    
+{% endblock %} 

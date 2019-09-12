@@ -1,0 +1,11 @@
+{% if menu %}
+    <ul>
+        {% for item in menu.items %}
+            <li class="{{ item.classes | join(' ') }}">
+                <a href="{{ item.link }}">
+                    <img src="{{ theme.link ~ '/images/icons/' ~ item.title ~ '.svg' }}" />
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

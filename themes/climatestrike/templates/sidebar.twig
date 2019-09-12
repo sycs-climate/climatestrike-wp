@@ -1,0 +1,8 @@
+<div id="sidebar" class="sidebar">
+    <div class="mobile-menu-bar">
+        {% include 'partials/burger.twig' with {onclick: "toggleSidebar();"} %}
+    </div>
+    <nav class="sidebar-navigation">
+        {% include 'partials/menu-list.twig' with {'menu': menu_primary_navigation} %}
+    </nav>
+</div>

@@ -1,0 +1,41 @@
+.wp-block-climatestrike-callout {
+    background: #f2f2f2;
+    padding: 20px;
+
+    border: 1px solid #000;
+}
+
+.components-media-upload {
+    width: 100%;
+    min-height: 5em;
+    padding: 1em;
+
+    background-color: #f2f2f2;
+}
+
+.components-media-upload__button {
+    width: 100%;
+    padding: 8px 0;
+
+    line-height: 20px;
+    text-align: center;
+
+    border: 1px dashed #cccccc;
+    background-color: #f2f2f2;
+}
+.components-media-upload__button:hover {
+    background-color: #fafafa;
+}
+.components-media-upload__clear-button {
+    color: red;
+    text-decoration: underline;
+}
+
+.components-media-upload img {
+    width: 100%;
+}
+.components-media-upload img:hover {
+    cursor: pointer;
+}
+
+

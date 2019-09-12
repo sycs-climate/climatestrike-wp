@@ -1,0 +1,14 @@
+<header class="page-header">
+    <div class="site-branding">
+        {% include 'partials/site-branding.twig' %}
+    </div>
+    <div class="header-content">
+        {% if menu_primary_navigation.items %}
+            <nav class="header-navigation" role="navigation">
+                {% include 'partials/menu-list.twig' with {'menu': menu_primary_navigation} %}
+            </nav>
+            {% include 'partials/burger.twig' with {onclick: "toggleSidebar();"} %}
+        {% endif %}
+    </div>
+    
+</header>

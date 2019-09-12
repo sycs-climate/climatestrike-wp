@@ -1,0 +1,16 @@
+.socials {
+    width: 23em;
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    img {
+        height: 4em;
+
+    }
+    a {
+        display: block;
+    }
+}

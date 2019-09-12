@@ -1,0 +1,33 @@
+{% block html_head_container %}
+    {% include 'html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
+{% endblock %}
+
+<body class="{{ body_class }}" {% if post.thumbnail %} background="{{ post.thumbnail.src }}" {% endif %}>
+
+    {% block sidebar_container %}
+        {% include 'sidebar.twig' %}
+    {% endblock %}
+
+    {% block header_container %}
+        {% include 'header.twig' %}
+    {% endblock %}
+    
+    {% block hero %} {% endblock %}
+
+    <div class="content">
+        {% block content %}
+            {% for post in posts %}
+                <article class="tease post-type-{{ post.post_type }}">
+                    <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+                    <p>{{ post.preview }}</p>
+                </article>
+            {% endfor %}
+        {% endblock %}
+    </div>
+
+    {% include 'footer.twig' %}
+</body>
+</html>
