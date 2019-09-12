@@ -9,7 +9,8 @@ function climatestrike_BackgroundContainer(){
      * WP component reference https://developer.wordpress.org/block-editor/components/ */
 
     const {
-        TextControl
+        TextControl,
+        Button
     } = wp.components;
 
     var el = wp.element.createElement;
