@@ -1,9 +1,6 @@
 function climatestrike_BackgroundContainer(){
-    if (!registerBlockType) {
-        const { registerBlockType } = wp.blocks;
-    }
+    const { registerBlockType } = wp.blocks;
 
-    
     const { 
         RichText
     } = wp.editor;
