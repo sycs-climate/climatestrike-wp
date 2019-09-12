@@ -47,9 +47,6 @@ class climatestrike_ThemeSetup
             wp_enqueue_style('climatestrike-style');
             
             if(WP_ENV == 'dev') {
-                wp_deregister_script('jquery');
-	            wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
-
                 wp_register_script('reveal', get_template_directory_uri() . '/js/modules/reveal.js');
                 wp_enqueue_script('reveal');
 
@@ -58,6 +55,9 @@ class climatestrike_ThemeSetup
             }
 
             // scripts
+            wp_deregister_script('jquery');
+	        wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
+
             $mainScript = (WP_ENV == 'prod' ? 'main.min.js' : 'main.js');
             wp_register_script('climatestrike-main', get_template_directory_uri() . '/js/' . $mainScript);
             wp_enqueue_script('climatestrike-main');

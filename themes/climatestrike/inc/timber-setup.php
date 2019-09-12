@@ -23,13 +23,13 @@ class climatestrike_TimberSite extends TimberSite
         $context['site'] = $this;
         $context['anForm'] = $this->anForm();
 
-        if ($post) {
+        /*if ($post) {
             $heroVideoBlock = new xr_HeroVideoBlock();
             $context['videoHero'] = $heroVideoBlock->getVideoId($post->ID, true);
 
             $heroBlock = new xr_HeroBlock();
             $context['hero'] = $heroBlock->getHero($post->ID, true);
-        }
+        }*/
 
         return $context;
     }
