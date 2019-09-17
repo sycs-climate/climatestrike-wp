@@ -35,6 +35,7 @@ class climatestrike_Jumbo
     function render($attributes, $content = '')
     {
         $context['content'] = $content;
+        $context['id'] = $attributes['id'];
         $context['attributes'] = $attributes;
 
         $output = Timber::compile('blocks/jumbo.twig', $context);
