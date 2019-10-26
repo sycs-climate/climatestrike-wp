@@ -1,4 +1,4 @@
-function climatestrike_BackgroundContainer(){
+function climatestrike_BackgroundContainer() {
     const { registerBlockType } = wp.blocks;
     
     const { 

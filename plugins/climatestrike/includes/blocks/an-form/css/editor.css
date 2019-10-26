@@ -1,0 +1,11 @@
+.wp-block-climatestrike-signup-form {
+    width: 100%;
+    min-height: 8em;
+    
+    text-align: center;
+    line-height: 8em;
+    font-weight: bold;
+
+    border: 1px dashed #cccccc;
+    background-color: #f2f2f2;
+}

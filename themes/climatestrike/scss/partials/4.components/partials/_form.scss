@@ -6,6 +6,11 @@
         margin-top: 1em;
     }
 }
+
+.notice {
+    color: red;
+}
+
 .form-group {
     padding: .625em;
     @include portrait {
