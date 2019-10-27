@@ -15,6 +15,10 @@
     transition: 0.4s;
 
     overflow-y: scroll;
+
+    &.is-open {
+        top: 0;
+    }
 }
 .sidebar-navigation {
     ul {

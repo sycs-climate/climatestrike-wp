@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(document).ready(function($) {
     var $dropdowns = $('.js-reveal');
 
     $dropdowns.each(function() {

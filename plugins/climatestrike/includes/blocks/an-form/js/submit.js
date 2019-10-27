@@ -25,7 +25,6 @@ jQuery(document).ready(function($) {
             success: function(response){
                 console.log(response); 
                 if(response['success']) {
-                    alert("Success");
                     $form.addClass('grayed-out');
                     $.each($form.find('input'), function(){
                         this.disabled = true;
@@ -34,7 +33,6 @@ jQuery(document).ready(function($) {
                     $('#climatestrike-signup-wrapper #notice').empty();
                     $('#climatestrike-signup-wrapper').append($('<h2>').addClass('jumbo').append("Thanks! You will hear from us shortly."));
                 } else {
-                    alert("fail");
                     $('#climatestrike-signup-wrapper #notice').removeClass('is-hidden');
                     $.each(response['data']['errors'], function(key, value){
                         $('#climatestrike-signup-wrapper #notice ul').append($('<li>').append(value));

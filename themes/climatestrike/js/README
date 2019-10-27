@@ -1,0 +1,1 @@
+Concatenate and minify into a single main.min.js file using browserify and minify.js
