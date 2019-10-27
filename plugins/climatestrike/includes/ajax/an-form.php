@@ -28,8 +28,7 @@ class climatestrike_SubmitSignupForm {
             return $response;
         }
 
-        $data_formatted = $this->formatFieldsForAN($data);
-        $an = $this->postToActionNetwork($data_formatted);
+        $an = $this->postToActionNetwork($data);
     
         if($an !== true) {
             $response['success'] = false;
@@ -52,6 +51,9 @@ class climatestrike_SubmitSignupForm {
             $this->post_prefix = $_POST;
         }*/
 
+
+        if(empty($data['first-name']) || empty($data['last-name']) ) $response['errors']['required'] = "Please fill out all required fields.";
+
         if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             $response['errors']['email'] = "Invalid email address.";
         }
@@ -59,6 +61,13 @@ class climatestrike_SubmitSignupForm {
         if(empty($data['gdpr-consent'])) {
             $response['errors']['gdpr-consent'] = "In compliance with GDPR, you must consent to receiving communications from us.";
         }
+
+        if(!empty($data['join'])) {
+            if(empty($data['yob'])) $response['errors']['yob'] = "Please enter your year of birth.";
+            else if(!is_numeric($data['yob'])) $response['errors']['yob'] = "Please enter a valid year of birth.";
+            else if(date('Y') - intval($data['yob']) > 25) $response['errors']['yob'] = "Sorry! You must be 25 or under to join SYCS.";
+        }
+
 
         if(count($response['errors']) == 0) {
             $response['success'] = true;
@@ -68,6 +77,8 @@ class climatestrike_SubmitSignupForm {
     }
 
     function postToActionNetwork($data) {
+        $data_formatted = $this->formatFieldsForAN($data);
+
         $header = array(
             'Content-Type: application/json',
             'OSDI-API-Token: ' . CLIMATESTRIKE_AN_API_KEY
@@ -81,7 +92,7 @@ class climatestrike_SubmitSignupForm {
             CURLOPT_URL => $api_url,
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_POST => 1,
-            CURLOPT_POSTFIELDS => json_encode($data),
+            CURLOPT_POSTFIELDS => json_encode($data_formatted),
             CURLOPT_HTTPHEADER => $header
         );
         curl_setopt_array($ch, $options);
@@ -127,8 +138,10 @@ class climatestrike_SubmitSignupForm {
         }
 
         $custom_fields = array(
-            'phone_number' => $data['phone-number'],
+            'Phone' => $data['phone-number'],
         );
+
+        if(!empty($data['yob'])) $custom_fields['yob'] = $data['yob'];
 
         $person = array(
             'given_name' => $data['first-name'],
@@ -138,9 +151,14 @@ class climatestrike_SubmitSignupForm {
             'custom_fields' => $custom_fields,
         );
 
-        return array(
-            'person' => $person
+        $rtn = array(
+            'person' => $person,
+            'add_tags' => array()
         );
+
+        if(!empty($data['join'])) $rtn['add_tags'][] = "member";
+
+        return $rtn;
 
     }
 }
