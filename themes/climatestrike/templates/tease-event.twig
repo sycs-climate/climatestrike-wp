@@ -13,19 +13,19 @@
             {% if event.start | date("d-m-Y") == event.end | date("d-m-Y") %}
                 <div>
                     <span class="date">{{ event.start | date("d-m-Y") }}</span>,
-                    <span class="time">{{ event.start | date("h:ma") }} - {{ event.end | date("h:ma") }}</span>
+                    <span class="time">{{ event.start | date("g:ia") }} - {{ event.end | date("g:ia") }}</span>
                 </div>
             {% else %}
                 <div class="start">
                     <span class="date">{{ event.start | date("d-m-Y") }}</span><br />
-                    <span class="time">{{ event.start | date("h:ma") }}</span>
+                    <span class="time">{{ event.start | date("g:ia") }}</span>
                 </div>
                 <div class="sep">
                     <b> - </b>
                 </div>
                 <div class="end">
                     <span class="date">{{ event.end | date("d-m-Y") }}</span><br />
-                    <span class="time">{{ event.end | date("h:ma") }}</span>
+                    <span class="time">{{ event.end | date("g:ia") }}</span>
                 </div>
             {% endif %}
         </div><br />

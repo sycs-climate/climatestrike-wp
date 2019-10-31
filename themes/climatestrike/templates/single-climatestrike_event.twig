@@ -13,13 +13,13 @@
                 {% if post.start | date("d-m-Y") == date.end("d-m-Y") %}
                 <p>
                     {{ post.start | date("d-m-Y") }}<br />
-                    {{ post.start | date("h:ma") }} - {{ post.end | date("h:ma") }}
+                    {{ post.start | date("g:ia") }} - {{ post.end | date("g:ia") }}
                 </p>
                 {% else %}
                 <p>
                     <b> From: </b>
                     {{ post.start | date("d-m-Y") }}<br />
-                    {{ post.start | date("h:ma") }}
+                    {{ post.start | date("g:ia") }}
                 </p>
                 {% endif %}
             </div>
@@ -28,7 +28,7 @@
                 <p><br /><br />
                     <b> Until: </b>
                     {{ post.end | date("d-m-Y") }}<br />
-                    {{ post.end | date("h:ma") }}
+                    {{ post.end | date("g:ia") }}
                 </p>
 
                 {% endif %}
