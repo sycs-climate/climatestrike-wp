@@ -10,24 +10,24 @@
         <div class="event-meta__item_wrap">
             <div class="event-meta__item">
                 <h3> When </h3><hr />
-                {% if post.start | date("d-m-Y") == date.end("d-m-Y") %}
+                {% if post.start | date(options.date_format) == date.end(options.date_format) %}
                 <p>
-                    {{ post.start | date("d-m-Y") }}<br />
+                    {{ post.start | date(options.date_format) }}<br />
                     {{ post.start | date("g:ia") }} - {{ post.end | date("g:ia") }}
                 </p>
                 {% else %}
                 <p>
                     <b> From: </b>
-                    {{ post.start | date("d-m-Y") }}<br />
+                    {{ post.start | date(options.date_format) }}<br />
                     {{ post.start | date("g:ia") }}
                 </p>
                 {% endif %}
             </div>
             <div class="event-meta__item">
-                {% if post.start | date("d-m-Y") != date.end("d-m-Y") %}
+                {% if post.start | date(options.date_format) != date.end(options.date_format) %}
                 <p><br /><br />
                     <b> Until: </b>
-                    {{ post.end | date("d-m-Y") }}<br />
+                    {{ post.end | date(options.date_format) }}<br />
                     {{ post.end | date("g:ia") }}
                 </p>
 

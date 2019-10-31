@@ -21,7 +21,11 @@ class climatestrike_TimberSite extends TimberSite
         $context['menu_socials'] = new TimberMenu('socials');
         $context['menu_footer'] = new TimberMenu('footer');
         $context['site'] = $this;
-        $context['anForm'] = $this->anForm();
+    
+        $context['options'] = array(
+            'date_format' => get_option('date_format'),
+            'time_format' => get_option('time_format')
+        );
 
         /*if ($post) {
             $heroVideoBlock = new xr_HeroVideoBlock();

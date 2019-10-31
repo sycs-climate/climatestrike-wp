@@ -7,25 +7,25 @@
     </div>
 
     <div class="tease-event__body">
-        <h2 class="jumbo">{{ event.title }}</h2>
+        <h2 class="jumbo">{{ event.title }}{{ options.date_format }}</h2>
 
         <div class="tease-event__date-long">
-            {% if event.start | date("d-m-Y") == event.end | date("d-m-Y") %}
+            {% if event.start | date(options.date_format) == event.end | date(options.date_format) %}
                 <div>
-                    <span class="date">{{ event.start | date("d-m-Y") }}</span>,
-                    <span class="time">{{ event.start | date("g:ia") }} - {{ event.end | date("g:ia") }}</span>
+                    <span class="date">{{ event.start | date(options.date_format) }}</span>,
+                    <span class="time">{{ event.start | date(options.time_format) }} - {{ event.end | date(options.time_format) }}</span>
                 </div>
             {% else %}
                 <div class="start">
-                    <span class="date">{{ event.start | date("d-m-Y") }}</span><br />
-                    <span class="time">{{ event.start | date("g:ia") }}</span>
+                    <span class="date">{{ event.start | date(options.date_format) }}</span><br />
+                    <span class="time">{{ event.start | date(options.time_format) }}</span>
                 </div>
                 <div class="sep">
                     <b> - </b>
                 </div>
                 <div class="end">
-                    <span class="date">{{ event.end | date("d-m-Y") }}</span><br />
-                    <span class="time">{{ event.end | date("g:ia") }}</span>
+                    <span class="date">{{ event.end | date(options.date_format) }}</span><br />
+                    <span class="time">{{ event.end | date(options.time_format) }}</span>
                 </div>
             {% endif %}
         </div><br />
