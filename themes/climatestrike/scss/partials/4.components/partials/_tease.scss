@@ -1,0 +1,58 @@
+.tease {}
+
+.events-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.625em;
+}
+.tease-event {
+    width: calc(33% - 1.25em);
+    margin: 0.625em;
+    padding: 0.625em;
+
+    background-color: #f2f2f2;
+
+    >* { 
+        padding: 0.625em;
+    }
+
+    &__img {
+        margin: -0.625em;
+        min-height: 12em;
+
+        background-color: #000;
+    }
+
+    &__date-short {
+        color: #fff;
+
+        text-transform: uppercase;
+        font-family: "FucXed", sans-serif;
+    }
+    
+    &__date-long {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__location {
+        display: flex;
+        justify-content: space-between;
+        
+        .location {
+            flex-grow: 1;
+        }
+        .postcode {
+            font-weight: bold;
+        }
+    }
+
+    transition: 0.4s;
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    @include respond(max-width, 800px) {
+        width: 100%;
+    }
+}

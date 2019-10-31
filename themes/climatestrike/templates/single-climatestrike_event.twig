@@ -1,0 +1,47 @@
+{# WIP FOR NOW #}
+{% extends 'single.twig' %}
+
+{% block content %}
+<article class="post-type{{ $post->post_type }}" id="post-{{ post.id }}">
+    <div class="event-meta">
+        <div class="event-meta__thumbnail" {% if post.thumbnail %}style="background-image: url({{ post.thumbnail.src }});"{% endif %}>
+            <h1>{{ post.title }}</h1>
+        </div>
+        <div class="event-meta__item_wrap">
+            <div class="event-meta__item">
+                <h3> When </h3><hr />
+                {% if post.start | date("d-m-Y") == date.end("d-m-Y") %}
+                <p>
+                    {{ post.start | date("d-m-Y") }}<br />
+                    {{ post.start | date("h:ma") }} - {{ post.end | date("h:ma") }}
+                </p>
+                {% else %}
+                <p>
+                    <b> From: </b>
+                    {{ post.start | date("d-m-Y") }}<br />
+                    {{ post.start | date("h:ma") }}
+                </p>
+                {% endif %}
+            </div>
+            <div class="event-meta__item">
+                {% if post.start | date("d-m-Y") != date.end("d-m-Y") %}
+                <p><br /><br />
+                    <b> Until: </b>
+                    {{ post.end | date("d-m-Y") }}<br />
+                    {{ post.end | date("h:ma") }}
+                </p>
+
+                {% endif %}
+            </div>
+            <div class-"event-meta__item">
+                <h3> Where </h3><hr />
+                <p> {{ post.location }} </p>
+            </div>
+            <div class-"event-meta__item">
+                <br /><br />
+                <p> {{ post.postcode }} </p>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

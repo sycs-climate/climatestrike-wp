@@ -14,7 +14,7 @@ function climatestrike_SignupForm() {
         edit: function(props) {
            return el('div', { className: props.className }, 
                 el('p', {}, "Signup Form")
-           ) 
+           );
         },
         save: function(props) {
             return "";

@@ -1,7 +1,7 @@
 #sign-up-wrapper {
     margin-top: 4em;
     padding: .625em;
-    @include portrait {
+    @include respond(max-width, 800px)  {
         padding: 0;
         margin-top: 1em;
     }
@@ -13,7 +13,7 @@
 
 .form-group {
     padding: .625em;
-    @include portrait {
+    @include respond(max-width, 800px) {
         padding: .625em 0;
     }
 }
@@ -30,7 +30,7 @@
 
 .form-wrap > * {
     width: 33.333%;
-    @include portrait {
+    @include respond(max-width, 800px)  {
         width: 100%;
     }
 }

@@ -5,7 +5,7 @@
     </head>
 {% endblock %}
 
-<body class="{{ body_class }}" {% if post.thumbnail %} background="{{ post.thumbnail.src }}" {% endif %}>
+<body class="{{ body_class }}" {% if post.thumbnail %} style="background-image:url({{ post.thumbnail.src }});" {% endif %}>
 
     {% block sidebar_container %}
         {% include 'sidebar.twig' %}

@@ -1,0 +1,16 @@
+{% extends 'base.twig'%}
+
+{% block content %}
+<article class="post-type{{ post.post_type }}">
+    <div class="body-text">
+        {{ post.content }}
+    </div>
+</article>
+
+<div class="events-list">
+    {% for event in events %}
+        {% include 'tease-event.twig' with {'event': event} %}
+    {% endfor %}
+</div>
+
+{% endblock %}

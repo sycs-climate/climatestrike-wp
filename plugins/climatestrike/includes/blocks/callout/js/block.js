@@ -1,4 +1,4 @@
-function climatestrike_BackgroundContainer(){
+function climatestrike_Callout(){
     const { registerBlockType } = wp.blocks;
     
     const { 
@@ -98,4 +98,4 @@ function climatestrike_BackgroundContainer(){
     });
 }
 
-climatestrike_BackgroundContainer();
+climatestrike_Callout();
