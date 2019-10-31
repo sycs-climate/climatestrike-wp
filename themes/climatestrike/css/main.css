@@ -952,6 +952,55 @@ h6 {
   width: 100%;
 }
 
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.625em;
+}
+
+.tease-event {
+  width: calc(33% - 1.25em);
+  margin: 0.625em;
+  padding: 0.625em;
+  background-color: #f2f2f2;
+  transition: 0.4s;
+}
+.tease-event > * {
+  padding: 0.625em;
+}
+.tease-event__img {
+  margin: -0.625em;
+  min-height: 12em;
+  background-color: #000;
+}
+.tease-event__date-short {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "FucXed", sans-serif;
+}
+.tease-event__date-long {
+  display: flex;
+  justify-content: space-between;
+}
+.tease-event__location {
+  display: flex;
+  justify-content: space-between;
+}
+.tease-event__location .location {
+  flex-grow: 1;
+}
+.tease-event__location .postcode {
+  font-weight: bold;
+}
+.tease-event:hover {
+  transform: scale(1.1);
+}
+@media only screen and (max-width: 800px) {
+  .tease-event {
+    width: 100%;
+  }
+}
+
 .container {
   width: 100%;
   padding: 1em;
