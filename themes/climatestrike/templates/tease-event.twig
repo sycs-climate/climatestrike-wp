@@ -7,7 +7,7 @@
     </div>
 
     <div class="tease-event__body">
-        <h2 class="jumbo">{{ event.title }}{{ options.date_format }}</h2>
+        <h2 class="jumbo">{{ event.title }}</h2>
 
         <div class="tease-event__date-long">
             {% if event.start | date(options.date_format) == event.end | date(options.date_format) %}
