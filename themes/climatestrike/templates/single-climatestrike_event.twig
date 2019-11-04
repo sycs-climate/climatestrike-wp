@@ -13,13 +13,13 @@
                 {% if post.start | date(options.date_format) == date.end(options.date_format) %}
                 <p>
                     {{ post.start | date(options.date_format) }}<br />
-                    {{ post.start | date("g:ia") }} - {{ post.end | date("g:ia") }}
+                    {{ post.start | date(options.time_format) }} - {{ post.end | date(options.time_format) }}
                 </p>
                 {% else %}
                 <p>
                     <b> From: </b>
                     {{ post.start | date(options.date_format) }}<br />
-                    {{ post.start | date("g:ia") }}
+                    {{ post.start | date(options.time_format) }}
                 </p>
                 {% endif %}
             </div>
@@ -28,7 +28,7 @@
                 <p><br /><br />
                     <b> Until: </b>
                     {{ post.end | date(options.date_format) }}<br />
-                    {{ post.end | date("g:ia") }}
+                    {{ post.end | date(options.time_format) }}
                 </p>
 
                 {% endif %}

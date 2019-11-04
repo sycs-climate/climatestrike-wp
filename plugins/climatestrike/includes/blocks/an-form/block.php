@@ -46,7 +46,8 @@ class climatestrike_SignupForm
     function render($attributes, $content = '')
     {
         $context['content'] = $content;
-        $context['background_color'] = $attributes['background_color'];
+        $context['title'] = $attributes['title'];
+        $context['join'] = $attributes['join'];
 
         $context['attributes'] = $attributes;
 

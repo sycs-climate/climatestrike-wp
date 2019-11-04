@@ -1,5 +1,5 @@
 <div id="climatestrike-signup-wrapper">
-    <h1 class="jumbo" id="signup">Stay Informed</h1>
+    <h1 class="jumbo" id="signup">{{ title }}</h1>
     <div id="notice"><ul></ul></div>
     <form id="climatestrike-signup-form" action="{{ site.url }}/#signup" target="submission-frame">
       <div class="form-wrap">
@@ -32,11 +32,11 @@
           <input id="in-gdpr-consent" type="checkbox" name="gdpr-consent" value="Yes" required="">
       </div>
       <div class="form-group form-checkbox">
-          <label for="in-join">I would like to hear more about getting involved in SYCS.</label>
-          <input id="in-join" type="checkbox" name="join" value="Yes">
+          <label for="in-join">I would like to join SYCS.</label>
+          <input id="in-join" type="checkbox" name="join" value="Yes" {% if join %} checked="true" {% endif %} >
       </div>
-      <div class="form-group is-hidden" id="fg-yob">
-          <input id="in-yob" name="yob" type="text" placeholder="Year of Birth" />
+      <div class="form-group {% if join == false %}is-hidden{% endif %}" id="fg-yob">
+          <input id="in-yob" name="yob" type="text" placeholder="Year of Birth" {% if join %} required=""{% endif %} >
       </div><div class="form-group"></div><div class="form-group"></div>
      </div>
     </form>
