@@ -18,9 +18,10 @@
 
     &__img {
         margin: -0.625em;
-        min-height: 12em;
+        min-height: 16em;
 
         background-color: #000;
+        background-size: cover;
     }
 
     &__date-short {
