@@ -28,7 +28,7 @@ class climatestrike_Events
                 'rewrite' => array(
                     'slug' => "event",
                     'with_front' => false,
-                ),
+                )
             )
         );
 
@@ -103,13 +103,17 @@ class climatestrike_Events
         }
         return $events;
     }
+    
+    function setEventInfo(&$event) {
+        $event->location = $event->custom['climatestrike_event_details_location'];
+        $event->postcode = $event->custom['climatestrike_event_details_postcode'];
+        $event->start = $event->custom['climatestrike_event_details_start'];
+        $event->end = $event->custom['climatestrike_event_details_end'];
+    }
 
     function setInfo(&$events) {
         foreach ($events as &$event) {
-            $event->location = $event->custom['climatestrike_event_details_location'];
-            $event->postcode = $event->custom['climatestrike_event_details_postcode'];
-            $event->start = $event->custom['climatestrike_event_details_start'];
-            $event->end = $event->custom['climatestrike_event_details_end'];
+            $this->setEventInfo($event);
         }
         return $events;
     }
@@ -130,6 +134,7 @@ class climatestrike_Events
 
         return $events;
     }
+
 }
 add_action('init', function(){
     $events = new climatestrike_Events;

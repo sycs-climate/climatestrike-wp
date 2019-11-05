@@ -2,26 +2,29 @@
 /**
   * This is WIP for now
   **/
+
+$post = new TimberPost();
 $context = Timber::get_context();
-$context['post'] = new TimberPost();
 
 if($post->post_type == "post") {
     $context['posts'] = new Timber\PostQuery(array(
         'posts_per_page' => 3,
         'orderby' => array('post_date' => 'DESC')
     ));
-} elseif ($post->post_type == "climatestrike_event") {
+} else if($post->post_type == "climatestrike_event") {
     $eventsObj = new climatestrike_Events;
-    $eventsObj->setInfo(array(&$post));
+
+    $eventsObj->setEventInfo($post); // Grab event data
+
     $eventsQuery = $eventsObj->buildQuery('', '', '', '', array(
         'posts_per_page' => '3'
     ));
     $events = $eventsObj->getEvents($eventsQuery);
-    $eventsObj->setInfo($events);
-    $eventsObj->addThumbnails($events);
 
     $context['events'] = $events;
 }
+
+$context['post'] = $post;
 
 $templates = array('single-' . $post->post_type . '.twig', 'single.twig');
 Timber::render($templates, $context);

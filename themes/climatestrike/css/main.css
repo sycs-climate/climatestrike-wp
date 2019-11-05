@@ -993,6 +993,10 @@ h6 {
 .tease-event__location .postcode {
   font-weight: bold;
 }
+.tease-event__button {
+  text-align: center;
+  margin-top: 1em;
+}
 .tease-event:hover {
   transform: scale(1.1);
 }
@@ -1000,6 +1004,44 @@ h6 {
   .tease-event {
     width: 100%;
   }
+}
+
+.post-type-climatestrike_event {
+  display: flex;
+  flex-direction: row;
+}
+.post-type-climatestrike_event .events-list {
+  width: 25%;
+}
+.post-type-climatestrike_event .events-list .tease-event {
+  width: 100%;
+}
+
+.event-meta hr {
+  margin-bottom: 1em;
+}
+.event-meta__thumbnail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1em;
+  background-size: cover;
+  background-position: center;
+  min-height: 8em;
+}
+.event-meta__item_wrap {
+  margin: 2em;
+  padding: 2em;
+  background-color: #f2f2f2;
+}
+.event-meta__item_wrap div {
+  margin-bottom: 1em;
+}
+.event-meta__date {
+  display: flex;
+}
+.event-meta__date p {
+  width: 50%;
 }
 
 .container {

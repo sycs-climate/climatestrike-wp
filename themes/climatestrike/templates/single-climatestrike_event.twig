@@ -2,46 +2,58 @@
 {% extends 'single.twig' %}
 
 {% block content %}
-<article class="post-type{{ $post->post_type }}" id="post-{{ post.id }}">
-    <div class="event-meta">
-        <div class="event-meta__thumbnail" {% if post.thumbnail %}style="background-image: url({{ post.thumbnail.src }});"{% endif %}>
-            <h1>{{ post.title }}</h1>
-        </div>
-        <div class="event-meta__item_wrap">
-            <div class="event-meta__item">
-                <h3> When </h3><hr />
-                {% if post.start | date(options.date_format) == date.end(options.date_format) %}
-                <p>
-                    {{ post.start | date(options.date_format) }}<br />
-                    {{ post.start | date(options.time_format) }} - {{ post.end | date(options.time_format) }}
-                </p>
-                {% else %}
-                <p>
-                    <b> From: </b>
-                    {{ post.start | date(options.date_format) }}<br />
-                    {{ post.start | date(options.time_format) }}
-                </p>
-                {% endif %}
-            </div>
-            <div class="event-meta__item">
-                {% if post.start | date(options.date_format) != date.end(options.date_format) %}
-                <p><br /><br />
-                    <b> Until: </b>
-                    {{ post.end | date(options.date_format) }}<br />
-                    {{ post.end | date(options.time_format) }}
-                </p>
+<article class="post-type-{{ post.post_type }}" id="post-{{ post.id }}">
 
-                {% endif %}
+    <div style="flex-grow: 1;">
+
+        <div class="event-meta">
+            <div class="event-meta__thumbnail" {% if post.thumbnail %}style="background-image: url({{ post.thumbnail.src }});"{% endif %}>
+                <h1>{{ post.title }}</h1>
             </div>
-            <div class-"event-meta__item">
-                <h3> Where </h3><hr />
-                <p> {{ post.location }} </p>
-            </div>
-            <div class-"event-meta__item">
-                <br /><br />
-                <p> {{ post.postcode }} </p>
+            <div class="event-meta__item_wrap">
+                <div class="event-meta__when">
+                    <h3> When </h3><hr />
+                    {% if post.start | date(options.date_format) == post.end | date(options.date_format) %}
+                    <p>
+                        {{ post.start | date(options.date_format) }}<br />
+                        {{ post.start | date(options.time_format) }} - {{ post.end | date(options.time_format) }}
+                    </p>
+                    {% else %}
+                    <div class="event-meta__date">
+                        <p>
+                            <b> From: </b>
+                            {{ post.start | date(options.date_format) }}<br />
+                            {{ post.start | date(options.time_format) }}
+                        </p>
+
+                        <p>
+                            <b> Until: </b>
+                            {{ post.end | date(options.date_format) }}<br />
+                            {{ post.end | date(options.time_format) }}
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class-"event-meta__where">
+                    <h3> Where </h3><hr />
+                    <p> {{ post.location }}{% if post.postcode %}, {{ post.postcode }} {% endif %}</p>
+                </div>
             </div>
         </div>
+
+        <div class-"container">
+            {{ post.content }}
+        </div>
+
     </div>
+
+    <div class="events-list">
+        {% for event in events %}
+            {% include 'tease-event.twig' with {'event': event} %}
+        {% endfor %}
+    </div>
+
 </article>
+
 {% endblock %}
