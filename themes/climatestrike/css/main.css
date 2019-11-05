@@ -1213,6 +1213,11 @@ This theme is licensed under GPL v3.0
   width: 100%;
   box-sizing: border-box;
 }
+@media only screen and (max-width: 800px) {
+  .content {
+    padding-top: 5em;
+  }
+}
 
 #facebook-event-frame {
   width: 100%;
