@@ -1022,6 +1022,11 @@ h6 {
 .post-type-climatestrike_event .events-list .tease-event {
   width: 100%;
 }
+@media only screen and (min-wdith: 800px) {
+  .post-type-climatestrike_event {
+    flex-wrap: nowrap;
+  }
+}
 
 .event-meta hr {
   margin-bottom: 1em;
