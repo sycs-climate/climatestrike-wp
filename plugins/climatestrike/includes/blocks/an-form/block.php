@@ -47,6 +47,7 @@ class climatestrike_SignupForm
     {
         $context['content'] = $content;
         $context['title'] = $attributes['title'];
+        $context['button'] = $attributes['button'];
         $context['join'] = $attributes['join'];
 
         $context['attributes'] = $attributes;

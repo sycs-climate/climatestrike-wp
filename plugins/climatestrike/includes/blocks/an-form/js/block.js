@@ -19,6 +19,10 @@ function climatestrike_SignupForm() {
                 type: 'string',
                 default: 'Stay Informed'
             },
+            button: {
+                type: 'string',
+                default: 'Join Newsletter'
+            },
             join: {
                 type: 'boolean',
                 default: false
@@ -38,6 +42,14 @@ function climatestrike_SignupForm() {
                             },
                             value: props.attributes.title
                         }),
+                        el(TextControl, {
+                            label: 'Button Text',
+                            onChange: ( value ) => {
+                                props.setAttributes( { button: value } );
+                            },
+                            value: props.attributes.button
+                        }),
+
                         el(CheckboxControl, {
                             label: 'Join',
                             onChange: ( value ) => {
