@@ -511,7 +511,7 @@ h6 {
 }
 .form-checkbox input[type=checkbox] {
   order: 0;
-  width: 1em;
+  width: auto;
   margin: 0 1em;
 }
 
