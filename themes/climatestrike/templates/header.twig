@@ -3,6 +3,11 @@
         {% include 'partials/site-branding.twig' %}
     </div>
     <div class="header-content">
+        {% if menu_socials.items %}
+            <div class="socials">
+                {% include 'partials/icon-menu-list.twig' with {'menu': menu_socials} %}
+            </div>
+        {% endif %}
         {% if menu_primary_navigation.items %}
             <nav class="header-navigation" role="navigation">
                 {% include 'partials/menu-list.twig' with {'menu': menu_primary_navigation} %}

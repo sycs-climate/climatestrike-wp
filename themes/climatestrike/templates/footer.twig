@@ -5,7 +5,11 @@
         {% include 'partials/menu-list.twig' with {'menu': menu_footer} %}
     </div>
     <div class="page-footer__column">
-
+        {% if menu_socials.items %}
+            <div class="socials">
+                {% include 'partials/icon-menu-list.twig' with {'menu': menu_socials} %}
+            </div>
+        {% endif %}
     </div>
     <div class="page-footer__column" style="text-align: center;">
         <img src="{{ theme.link ~ '/images/fff-scotland.png' }}" width="150px" />

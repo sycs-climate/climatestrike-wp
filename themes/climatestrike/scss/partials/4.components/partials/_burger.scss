@@ -5,8 +5,13 @@
     padding: 0.5em;
 
     transition: 0.4s;
-}
-.burger:hover {
-    cursor: pointer;
-    background-color: #f1f1f1;
+
+    @include respond(min-width, 800px) {
+        display: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: #f1f1f1;
+    }
 }

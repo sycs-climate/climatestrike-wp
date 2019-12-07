@@ -556,7 +556,11 @@ h6 {
   padding: 0.5em;
   transition: 0.4s;
 }
-
+@media only screen and (min-width: 800px) {
+  .burger {
+    display: none;
+  }
+}
 .burger:hover {
   cursor: pointer;
   background-color: #f1f1f1;
@@ -637,6 +641,7 @@ h6 {
   display: flex;
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 .header-navigation ul li a {
   display: block;
@@ -691,19 +696,24 @@ h6 {
 }
 
 .socials {
-  width: 23em;
+  height: 5rem;
 }
 .socials ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 .socials img {
-  height: 4em;
+  height: 2.5em;
 }
-.socials a {
-  display: block;
+@media only screen and (max-width: 800px) {
+  .socials {
+    display: none;
+  }
 }
 
 .site-name {
