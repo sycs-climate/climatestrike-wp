@@ -11,5 +11,4 @@ require(CLIMATESTRIKE_PLUGIN_DIR . 'config.php');
 // Includes
 require(CLIMATESTRIKE_PLUGIN_DIR . 'includes/functions.php'); // Functions (for use in templating)
 require(CLIMATESTRIKE_PLUGIN_DIR . 'includes/blocks.php'); // Blocks added by this plugin
-require(CLIMATESTRIKE_PLUGIN_DIR . 'includes/custom-post-types.php'); // Custom post types
 require(CLIMATESTRIKE_PLUGIN_DIR . 'includes/ajax.php'); // AJAX Scripts

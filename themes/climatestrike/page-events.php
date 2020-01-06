@@ -18,7 +18,7 @@ $context['post'] = new TimberPost();
 /*
  * Get Latest Events
  */
-$eventsObj = new climatestrike_Events;
+$eventsObj = new ecr_Events; // Require ECR's Things Plugin
 $events = $eventsObj->getEvents();
 
 if(isset($_GET['near'])) $eventsObj->addDistance($events, $_GET['near']);

@@ -18,7 +18,7 @@ $context['post'] = new TimberPost();
 /*
  * Get Latest Events with 'strike' type
  */
-$eventsObj = new climatestrike_Events;
+$eventsObj = new ecr_Events; // Require ECR's Things plugin
 $eventsQuery = $eventsObj->buildQuery('', '', 'strike');
 $events = $eventsObj->getEvents($eventsQuery);
 
