@@ -11,8 +11,8 @@ if($post->post_type == "post") {
         'posts_per_page' => 3,
         'orderby' => array('post_date' => 'DESC')
     ));
-} else if($post->post_type == "climatestrike_event") {
-    $eventsObj = new climatestrike_Events;
+} else if($post->post_type == "ecr_event") {
+    $eventsObj = new ecr_Events;
 
     $eventsObj->setEventInfo($post); // Grab event data
 
