@@ -7,16 +7,10 @@ class climatestrike_ThemeSetup
         $this->menus();
         $this->sidebars();
         $this->assets();
+        $this->hooks();
     }
 
     function addSupport() {
-        /*add_theme_support(
-            'custom-header',
-            array(
-                'header-text'   => true
-            )
-        );*/
-
         add_theme_support('post-thumbnails');
     }
 
@@ -31,12 +25,6 @@ class climatestrike_ThemeSetup
     }
 
     function sidebars() {
-        register_sidebar(
-            array(
-                'name'              => 'Page Footer',
-                'id'                => 'footer'
-            )
-        );
     }
 
     function assets() { 
@@ -55,6 +43,15 @@ class climatestrike_ThemeSetup
             );
             wp_enqueue_script('climatestrike-main');
         });
+    }
+
+    function hooks() {
+        add_filter('show_admin_bar', '__return_false'); // Hide admin bar
+
+        add_action('login_enqueue_scripts', function(){ // Set css(for logo) in login page
+            wp_register_style('climatestrike-login-style', get_template_directory_uri() . '/css/login.css');
+            wp_enqueue_style('climatestrike-login-style');
+        }, 8);
     }
 }
 

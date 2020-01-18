@@ -1,7 +1,4 @@
 <?php
-/**
-  * This is WIP for now
-  **/
 
 $post = new TimberPost();
 $context = Timber::get_context();

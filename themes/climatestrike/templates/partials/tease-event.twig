@@ -1,0 +1,43 @@
+<article class="tease tease-event {% if class%}{{ class }}{% endif %}" id="tease-{{ event.id }}">
+    <div class="tease-event__img" {% if event.thumbnail %} style="background-image:url({{ event.thumbnail.src }});" {% endif %} >
+        <div class="tease-event__date-short">
+            <span class="day">{{ event.start | date("d") }}</span>
+            <span class="month">{{ event.start | date("M") }}</span>
+        </div>
+    </div>
+
+    <div class="tease-event__body">
+        <h2 class="jumbo">{{ event.title }}</h2>
+
+        <div class="tease-event__date-long">
+            {% if event.start | date(options.date_format) == event.end | date(options.date_format) %}
+                <div>
+                    <span class="date">{{ event.start | date(options.date_format) }}</span>,
+                    <span class="time">{{ event.start | date(options.time_format) }}-{{ event.end | date(options.time_format) }}</span>
+                </div>
+            {% else %}
+                <div class="start">
+                    <span class="date">{{ event.start | date(options.date_format) }}</span><br />
+                    <span class="time">{{ event.start | date(options.time_format) }}</span>
+                </div>
+                <div class="sep">
+                    <b> - </b>
+                </div>
+                <div class="end">
+                    <span class="date">{{ event.end | date(options.date_format) }}</span><br />
+                    <span class="time">{{ event.end | date(options.time_format) }}</span>
+                </div>
+            {% endif %}
+        </div><br />
+
+        <div class="tease-event__location"> 
+            <span class="location">{{ event.location }}</span>
+            <span class="postcode">{{ event.postcode }}{% if event.distance %}, {{ event.distance | round(1)}}km{% endif %}</span>
+        </div>
+
+        <div class="tease-event__button">
+            <a class="btn" href="{{ event.link }}">Find out more</a>
+        </div>
+    </div>
+
+</article>

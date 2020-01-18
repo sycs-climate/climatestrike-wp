@@ -1,0 +1,146 @@
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 5em;
+
+    background-color: #fff;
+    color: #000;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    #sidebar-burger {
+        @include respond(min-width, $widths-large) {
+            display: none;
+        }
+    }
+}
+
+#site-branding {
+    flex-grow: 1;
+
+    .site-logo {
+        height: 4em;
+        margin: 0.5em;
+    }
+}
+
+#header-navigation {
+    
+    .menu {
+        display: flex;
+        list-style: none;
+
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+       >li {
+            position: relative;
+            display: flex;
+
+            &:hover {
+                background-color: #f0f0f0;
+
+                .sub-menu {
+                    display: block;
+                }
+            }
+        }
+
+        >li>a {
+            display: block;
+
+            height: 100%;
+            line-height: 5rem;
+            padding: 0 1.5rem;
+        
+            color: #000;
+
+            text-align: center;
+            text-decoration: none;
+            font-family: $ff--heading;
+            font-size: 2em;
+
+            &:hover {
+            }
+        }
+        
+        >.current_page_item>a {
+            border-bottom: 3px solid #000;
+        }
+
+        /*>.menu-item-has-children > a:after {
+            content: '';
+            display: inline-block;
+            
+            margin-left: 0.4em;
+            margin-right: 0.1em;
+            margin-bottom: 0.25em;
+
+            border-left: 0.25em solid transparent;
+            border-right: 0.25em solid transparent;
+            border-top: 0.25em solid #000;
+        } //caret */
+    }
+
+    .sub-menu {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background-color: #fff;
+
+        border: 1px solid #f0f0f0;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            
+            padding: 0;
+        }
+
+        ul>li>a {
+            display: block;
+            padding: 0.75em 1em;
+
+            text-decoration: none;
+            font-size: 0.75em;
+            white-space: nowrap;
+            text-align: center;
+
+            color: #000;
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+        }
+    }
+
+    @include respond(max-width, $widths-large) {
+        display: none;
+    }
+}
+
+.page-header .socials {
+    img {
+        height: 1.5em;
+        margin: 0.25em;
+    }
+
+    @include respond(max-width, $widths-large) {
+        display: none;
+    }
+}

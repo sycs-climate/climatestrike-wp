@@ -1,0 +1,11 @@
+// Breakpoints
+
+$widths-small: 600px; // Portrait tablets and phones
+$widths-medium: 768px; // Landscape tablets
+$widths-large: 992px; // Desktops and laptops
+
+$bp--menu-burger: $widths-medium;
+
+$bp--columns-3: $widths-large;
+$bp--columns-2: $widths-medium;
+$bp--columns-1: $widths-small;

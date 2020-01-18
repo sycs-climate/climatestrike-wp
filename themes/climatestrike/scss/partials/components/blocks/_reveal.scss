@@ -1,0 +1,76 @@
+.reveal + .reveal {
+    border-top: none;
+}
+
+.reveal {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    padding: 0.75em 0 0.625em;
+
+    p {
+        max-width: 90%;
+
+        @include respond(min-width, 800px) {
+            max-width: 100%;
+        }
+    }
+
+    &.is-open {
+        .reveal__heading button svg {
+            transform: rotate(270deg);
+        }
+
+        .reveal__hidden {
+            display: block;
+        }
+    }
+}
+
+.js-reveal .reveal__hidden {
+    display: none;
+}
+
+.reveal__heading {
+    font-size: 1em;
+    font-family: $ff--alt;
+    font-weight: bold;
+    padding-right: 2em;
+
+    button {
+        width: 100%;
+        text-align: left;
+        border: none;
+        background: none;
+        padding: 0;
+        position: relative;
+        color: black;
+        font-size: 2em;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        svg {
+            content: url(../images/icons/arrow-icon.svg);
+            display: block;
+            width: 1em;
+            height: 1em;
+            //background: url('../images/icons/arrow-icon.svg');
+            //background-size: cover;
+            position: absolute;
+            top: 0;
+            right: - 1.8em;
+            transition: transform 200ms;
+            transform: rotate(90deg); 
+        }
+    }
+}
+
+.reveal__content {
+    padding: 0.625em 0;
+
+    @include respond(min-width, 300px) {
+        padding: 1.25em 0;
+    }
+}

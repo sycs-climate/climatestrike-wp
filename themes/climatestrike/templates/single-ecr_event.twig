@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class-"container">
             {{ post.content }}
         </div>
 
@@ -50,7 +50,7 @@
 
     <div class="events-list">
         {% for event in events %}
-            {% include 'tease-event.twig' with {'event': event} %}
+            {% include 'partials/tease-event.twig' with {'event': event} %}
         {% endfor %}
     </div>
 

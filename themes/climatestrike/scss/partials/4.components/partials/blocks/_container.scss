@@ -1,8 +1,0 @@
-.container {
-    width: 100%;
-    padding: 1em;
-
-    @include respond(min-width, 800px) {
-        padding: 4em;
-    }
-}

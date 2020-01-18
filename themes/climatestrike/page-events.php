@@ -18,10 +18,13 @@ $context['post'] = new TimberPost();
 /*
  * Get Latest Events
  */
-$eventsObj = new ecr_Events; // Require ECR's Things Plugin
+$eventsObj = new ecr_Events;
 $events = $eventsObj->getEvents();
 
-if(isset($_GET['near'])) $eventsObj->addDistance($events, $_GET['near']);
+if(isset($_GET['near'])) {
+    $eventsObj->addDistance($events, $_GET['near']);
+    usort($events, function($a, $b){ return $a->distance - $b->distance; }); // Assume we want to sort by closest
+}
 
 $context['events'] = $events;
 

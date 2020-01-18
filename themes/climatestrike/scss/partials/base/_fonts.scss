@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "FucXed";
+    src: url("../fonts/fucxedcaps-v3-webfont.woff2") format("woff2");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+$ff--main: Helvetica,Arial,sans-serif;
+$ff--alt: "FucXed",sans-serif;
+$ff--heading: $ff--alt;
+
+body {
+    font-family: $ff--main;
+}

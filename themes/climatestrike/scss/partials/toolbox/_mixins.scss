@@ -1,0 +1,12 @@
+/*
+ * Mixin for responsive web design
+ *
+ * @include respond(max-width, 800px) {
+ *   /CSS/
+ * }
+ */
+@mixin respond($feature, $value, $media: only screen) {
+    @media #{$media} and ($feature: $value) {
+        @content;
+    }
+}

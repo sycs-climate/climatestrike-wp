@@ -1,19 +1,17 @@
 <header class="page-header">
-    <div class="site-branding">
-        {% include 'partials/site-branding.twig' %}
-    </div>
-    <div class="header-content">
-        {% if menu_socials.items %}
-            <div class="socials">
-                {% include 'partials/icon-menu-list.twig' with {'menu': menu_socials} %}
-            </div>
-        {% endif %}
-        {% if menu_primary_navigation.items %}
-            <nav class="header-navigation" role="navigation">
-                {% include 'partials/menu-list.twig' with {'menu': menu_primary_navigation} %}
-            </nav>
-            {% include 'partials/burger.twig' with {onclick: "toggleSidebar();"} %}
-        {% endif %}
-    </div>
+    {% include 'partials/site-branding.twig' %}
+
+    {% if menu_socials.items %}
+        <div class="socials">
+            {% include 'partials/icon-menu-list.twig' with {'menu': menu_socials.items, 'color':'#000'} %}
+        </div>
+    {% endif %}
+
+    {% if menu_primary_navigation.items %}
+        <nav id="header-navigation" role="navigation">
+            {% include 'partials/menu-list.twig' with {'menu': menu_primary_navigation.items} %}
+        </nav>
+        {% include 'partials/burger.twig' %}
+    {% endif %}
     
 </header>

@@ -1,0 +1,76 @@
+.ecr-form {
+    margin-top: 4em;
+    padding: .625em;
+    @include respond(max-width, $widths-large)  {
+        padding: 0;
+        margin-top: 1em;
+    }
+
+    .success {
+        text-align: center;
+    }
+}
+
+.notice {
+    color: red;
+}
+
+.form-wrap {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: .625em;
+
+    width: 100%;
+
+    > * {
+        width: 100%;
+    }
+}
+
+.form-group {
+    width: 33%;
+    padding: .625em;
+
+    @include respond(max-width, $widths-large) {
+        width: 100%;
+        padding: .625em 0;
+    }
+
+
+    input, textarea {
+        width: 100%;
+        border: none;
+
+        line-height: 1;
+        padding: .8125rem 1rem .75rem;
+
+        resize: none;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        background-color: #fff;
+        border: 1px solid #f1f1f1;
+    }
+
+    input[type="submit"] {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.form-checkbox {
+    display: flex;
+    width: 100%;
+
+    label {
+        display: block;
+        order: 1;
+    }
+    input[type="checkbox"] {
+        order: 0;
+        width: auto;
+        margin: 0 1em;
+    }
+}
+

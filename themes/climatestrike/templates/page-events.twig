@@ -7,9 +7,9 @@
     </div>
 </article>
 
-<div class="events-list">
+<div class="events-list flex">
     {% for event in events %}
-        {% include 'tease-event.twig' with {'event': event} %}
+        {% include 'partials/tease-event.twig' with {'event': event, 'class': "flex-item"} %}
     {% endfor %}
 </div>
 

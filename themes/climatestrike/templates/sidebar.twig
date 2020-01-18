@@ -1,8 +1,9 @@
 <div id="sidebar" class="sidebar">
-    <div class="mobile-menu-bar">
-        {% include 'partials/burger.twig' with {onclick: "toggleSidebar();"} %}
-    </div>
+    {% include 'partials/burger.twig' %}
     <nav class="sidebar-navigation">
-        {% include 'partials/menu-list.twig' with {'menu': menu_primary_navigation} %}
+        {% include 'partials/menu-list.twig' with {'menu': menu_primary_navigation.items} %}
     </nav>
+    <div class="socials">
+        {% include 'partials/icon-menu-list.twig' with {'menu': menu_socials.items, 'color': "#000"} %}
+    </div>
 </div>

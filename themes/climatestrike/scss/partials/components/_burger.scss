@@ -1,0 +1,10 @@
+.burger {
+    background: none;
+    border: none;
+
+    padding: 1em;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

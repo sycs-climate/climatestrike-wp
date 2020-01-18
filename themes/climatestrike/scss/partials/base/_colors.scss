@@ -1,0 +1,10 @@
+$bg--color: #fff;
+
+$text-colors--primary: #000;
+$text-colors--secondary: #999;
+$text-colors--highlight: #43B02A;
+
+body {
+    color: $text-colors--primary;
+    background-color: $bg--color;
+}

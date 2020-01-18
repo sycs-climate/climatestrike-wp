@@ -1,8 +1,0 @@
-<div class="container" style="
-    {% if attributes.background_image %} background-image: url({{ attributes.background_image.url }}); {% endif %}
-    {% if background_color %} background-color: rgba({{background_color.r}}, {{background_color.g}}, {{background_color.b}}, {{background_color.a}}); {% endif %}
-    {% if attributes.foreground_color %} color: {{ attributes.foreground_color }}; {% endif %}
-    {% if attributes.min_height %} min-height: {{ attributes.min_height }}; {% endif %} 
-">
-    {{ content }}
-</div>

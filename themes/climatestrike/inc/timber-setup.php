@@ -9,11 +9,6 @@ class climatestrike_TimberSite extends TimberSite
         parent::__construct();
     }
 
-    function anForm() {
-        /* Action Network sign up form, when I get to that */
-        return "";
-    }
-
     function addToContext($context) {
         global $post;
 
@@ -26,14 +21,6 @@ class climatestrike_TimberSite extends TimberSite
             'date_format' => get_option('date_format'),
             'time_format' => get_option('time_format')
         );
-
-        /*if ($post) {
-            $heroVideoBlock = new xr_HeroVideoBlock();
-            $context['videoHero'] = $heroVideoBlock->getVideoId($post->ID, true);
-
-            $heroBlock = new xr_HeroBlock();
-            $context['hero'] = $heroBlock->getHero($post->ID, true);
-        }*/
 
         return $context;
     }
