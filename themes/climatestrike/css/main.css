@@ -761,7 +761,7 @@ body {
   text-align: left;
   border: none;
   background: none;
-  padding: 0;
+  padding: 0 1em;
   position: relative;
   color: black;
   font-size: 2em;
@@ -776,7 +776,7 @@ body {
   height: 1em;
   position: absolute;
   top: 0;
-  right: -1.8em;
+  right: 0;
   transition: transform 200ms;
   transform: rotate(90deg);
 }
