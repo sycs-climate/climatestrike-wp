@@ -4,6 +4,12 @@
 <article class="post-type{{ post.post_type }}">
     <div class="body-text">
         {{ post.content }}
+
+        {% if error is defined %}
+        <br>
+        <h2 class="error">{{ error }}</h2><br>
+        {% endif %} 
+
     </div>
 </article>
 
