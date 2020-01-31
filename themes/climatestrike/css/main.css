@@ -586,12 +586,12 @@ body {
   display: block;
   height: 100%;
   line-height: 5rem;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   color: #000;
   text-align: center;
   text-decoration: none;
   font-family: "FucXed", sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 #header-navigation .menu > .current_page_item > a {
   border-bottom: 3px solid #000;
@@ -689,6 +689,9 @@ body {
 .footer-menu a {
   text-decoration: none;
   color: #fff;
+}
+.footer-menu a:hover {
+  text-decoration: underline;
 }
 
 .wp-block-button {
