@@ -2,7 +2,7 @@
     <div class="flex-item footer-menu">
         <h3>{{ menu_footer.title }}</h3>
         <hr />
-        {% include 'partials/menu-list.twig' with {'menu': menu_footer} %}
+        {% include 'partials/menu-list.twig' with {'menu': menu_footer.items} %}
     </div>
     <div class="flex-item socials">
         {% include 'partials/icon-menu-list.twig' with {'menu': menu_socials.items, 'color':'#fff'} %}
