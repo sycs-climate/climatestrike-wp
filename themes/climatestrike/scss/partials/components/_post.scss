@@ -11,31 +11,9 @@
     }
 }
 
-.post-type-ecr_event {
-    display: flex;
-    flex-direction: row;
-    
+.post-type-ecr_event {    
     margin-left: 2em;
     margin-right: 2em;
-
-    .events-list {
-        width: 25%;
-        @include respond(max-width, $widths-widescreen) {
-            width: 100%;
-        }
-
-        .tease-event {
-            width: 100%;
-
-            @include respond(max-width, $widths-widescreen) {
-                width: 30%;
-            }
-        }
-    }
-
-    @include respond(max-width, $widths-widescreen) {
-        flex-wrap: wrap;
-    }
 }
 
 .event-meta {

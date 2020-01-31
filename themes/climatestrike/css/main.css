@@ -895,14 +895,14 @@ body {
   text-align: center;
   margin-top: 1em;
 }
-@media only screen and (max-width: 768px) {
-  .tease-event {
-    width: 100%;
-  }
-}
 @media only screen and (max-width: 992px) {
   .tease-event {
     width: 50%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .tease-event {
+    width: 100%;
   }
 }
 
@@ -917,31 +917,8 @@ body {
 }
 
 .post-type-ecr_event {
-  display: flex;
-  flex-direction: row;
   margin-left: 2em;
   margin-right: 2em;
-}
-.post-type-ecr_event .events-list {
-  width: 25%;
-}
-@media only screen and (max-width: 1280px) {
-  .post-type-ecr_event .events-list {
-    width: 100%;
-  }
-}
-.post-type-ecr_event .events-list .tease-event {
-  width: 100%;
-}
-@media only screen and (max-width: 1280px) {
-  .post-type-ecr_event .events-list .tease-event {
-    width: 30%;
-  }
-}
-@media only screen and (max-width: 1280px) {
-  .post-type-ecr_event {
-    flex-wrap: wrap;
-  }
 }
 
 .event-meta hr {
