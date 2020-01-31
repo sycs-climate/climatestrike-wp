@@ -107,7 +107,10 @@
         margin-top: 1em;
     }
 
-    @include respond(max-width, $widths-small) {
+    @include respond(max-width, $widths-medium) {
         width: 100%;
+    }
+    @include respond(max-width, $widths-large) {
+        width: 50%;
     }
 }
