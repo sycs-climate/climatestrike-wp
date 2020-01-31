@@ -1,5 +1,51 @@
-.tease {}
+/* Post */
+.tease {
 
+    .title {
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        &::after{
+            content: '\A';
+        }
+    }
+    .author {
+        font-style: italic;
+        color: #68a060;
+    }
+
+    .preview {
+        padding: 2em;
+    }
+    .thumbnail {
+        height: 4em;
+    }
+    .more {
+        color: #cecece;
+        text-align: right;
+    }
+
+    .date {
+        font-family: $ff--alt;
+        color: #cecece;
+
+        text-align: right;
+    }
+
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    padding: 1em;
+
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(206,206,206,1);
+       -moz-box-shadow: 5px 5px 5px 0px rgba(206,206,206,1);
+            box-shadow: 5px 5px 5px 0px rgba(206,206,206,1);
+}
+
+/* ECR Event */
 .events-list {
     flex-wrap: wrap;
     padding: 0.625em;
@@ -10,6 +56,10 @@
     padding: 0.625em;
 
     background-color: #f2f2f2;
+
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
 
     >* { 
         padding: 0.625em;
@@ -26,10 +76,15 @@
     &__date-short {
         color: #fff;
 
-        text-transform: uppercase;
-        font-family: "FucXed", sans-serif;
+        font-weight: bolder;
     }
     
+    &__body h2 {
+        font-size: 2em;
+        text-align: center;
+        margin: 0.5em;
+    }
+
     &__date-long {
         display: flex;
         justify-content: space-between;
@@ -50,11 +105,6 @@
     &__button {
         text-align: center;
         margin-top: 1em;
-    }
-
-    transition: 0.4s;
-    &:hover {
-        transform: scale(1.1);
     }
 
     @include respond(max-width, 800px) {

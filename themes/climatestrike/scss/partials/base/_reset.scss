@@ -22,3 +22,12 @@ hr {
     margin: 0; /* 1 */
     padding: 0; /* 1 */
 }
+
+/*
+ * Wrap links & long words
+*/
+a,p {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
