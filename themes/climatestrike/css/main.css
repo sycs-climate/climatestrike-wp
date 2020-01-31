@@ -897,11 +897,6 @@ body {
 }
 @media only screen and (max-width: 992px) {
   .tease-event {
-    width: 50%;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .tease-event {
     width: 100%;
   }
 }
