@@ -691,6 +691,11 @@ body {
   color: #fff;
   text-align: center;
 }
+@media only screen and (max-width: 768px) {
+  .page-footer {
+    flex-wrap: wrap;
+  }
+}
 
 .footer-menu ul {
   list-style: none;
@@ -890,7 +895,7 @@ body {
   text-align: center;
   margin-top: 1em;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   .tease-event {
     width: 100%;
   }
